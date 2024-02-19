@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Attendance Tracker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light background */
+            color: #212529; /* Dark text */
+        }
+
+        header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            background-color: #007bff; /* Light blue */
+            color: #fff; /* White text */
+        }
+
+        .logo {
+            font-size: 1.4rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; /* White text */
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .student-info {
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: #fff; /* White background */
+            color: #212529; /* Dark text */
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .attendance-tracker table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .attendance-tracker td, .attendance-tracker th {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .attendance-tracker th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .attendance-tracker tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .attendance-wheel {
+            width: 5rem;
+            height: 5rem;
+            border: 0.4rem solid transparent;
+            border-radius: 50%;
+            border-top-color: var(--color, #212529); /* Dark text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            background-color: #28a745; /* Light green */
+        }
+	.attendance-wheel-defaulter{
+	    width: 5rem;
+            height: 5rem;
+            border: 0.4rem solid transparent;
+            border-radius: 50%;
+            border-top-color: var(--color, #212529); /* Dark text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            background-color: red; 
+	}
+        .lecture-details p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Your Logo Here</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Attendance Tracker</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <h1 style="text-align: center">Real-Time Attendance Tracker</h1>
+
+        <!-- Student Information -->
+        <div class="student-info">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Roll Number:</strong> ABC123</p>
+            <p><strong>Class:</strong> B.Tech 3rd Year</p>
+            <p><strong>Branch:</strong> Computer Science</p>
+        </div>
+
+        <!-- Attendance Tracker for Subjects -->
+        <div class="attendance-tracker">
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Attendance</th>
+                    <th>Lecture Details</th>
+                </tr>
+                <tr>
+                    <td><h2>Operating Systems</h2></td>
+                    <td><div class="attendance-wheel" style="--percentage: 75">75%</div></td>
+                    <td><div class="lecture-details"><p>Attended: 15</p><p>Total: 20</p></div></td>
+                </tr>
+                <tr>
+                    <td><h2>Linear Algebra</h2></td>
+                    <td><div class="attendance-wheel-defaulter" style="--percentage: 60">60%</div></td>
+                    <td><div class="lecture-details"><p>Attended: 12</p><p>Total: 20</p></div></td>
+                </tr>
+                 </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Computer Communications and Networks</h2>
+                    </td>
+                    <td>
+                        <div class="attendance-wheel" style="--percentage: 80">
+                        80%
+                        </div>
+                    </td>
+                    <td>
+                        <div class="lecture-details">
+                            <p>Lectures Attended: 16</p>
+                            <p>Total Lectures: 20</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Algorithms</h2>
+                    </td>
+                    <td>
+                            <div class="attendance-wheel-defaulter" style="--percentage: 70">
+                            70%
+                            </div>
+                    </td>
+                    <td>
+                        <div class="lecture-details">
+                            <p>Lectures Attended: 14</p>
+                            <p>Total Lectures: 20</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Professional Communication Skills</h2>
+                    </td>
+                    <td>
+                            <div class="attendance-wheel" style="--percentage: 95">
+                            95%
+                            </div>
+                    </td>
+                    <td>
+                        <div class="lecture-details">
+                            <p>Lectures Attended: 19</p>
+                            <p>Total Lectures: 20</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

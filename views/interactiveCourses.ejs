@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f5f5; /* Light background */
+            color: #333; /* Dark text */
+        }
+        .navbar {
+            background-color: #3498db; /* White background */
+            overflow: hidden;
+            border-bottom: 0.0625rem solid #ddd; /* Light gray border */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #333; /* Dark text */
+            text-align: center;
+            padding: 0.875rem 1.25rem; /* 14px 20px */
+            text-decoration: none;
+            font-size: 1rem; /* 17px */
+        }
+        .navbar a:hover {
+            background-color: #f0f0f0; /* Light gray background */
+            color: #000; /* Black text */
+        }
+        .profile-dropdown {
+            float: right;
+            display: flex;
+            align-items: center;
+            color: #333; /* Dark text */
+            text-align: center;
+            padding: 0.875rem 1.25rem; /* 14px 20px */
+            text-decoration: none;
+            font-size: 1rem; /* 17px */
+            cursor: pointer;
+            position: relative;
+        }
+        .profile-dropdown img {
+            max-width: 1.875rem; /* 30px */
+            max-height: 1.875rem; /* 30px */
+            border-radius: 50%;
+            margin-right: 0.625rem; /* 10px */
+            vertical-align: middle;
+        }
+        .profile-content {
+            display: none;
+            position: absolute;
+            background-color: #fff; /* White background */
+            width: 12.5rem; /* 200px */
+            box-shadow: 0px 0.5rem 1rem 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 3.125rem; /* 50px */
+            right: 0;
+            border-radius: 0.625rem; /* 10px */
+            margin: 0 auto;
+            text-align: left;
+            padding: 0.625rem; /* 10px */
+        }
+        .profile-content p {
+            margin: 0.3125rem 0; /* 5px */
+            color: #333; /* Dark text */
+        }
+        .profile-content img {
+            max-width: 6.25rem; /* 100px */
+            max-height: 6.25rem; /* 100px */
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+        .welcome-message {
+            margin-top: 3.125rem; /* 50px */
+            font-size: 1.25rem; /* 20px */
+        }
+        .start-class-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 0.9375rem 2rem; /* 15px 32px */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem; /* 16px */
+            margin-top: 1.25rem; /* 20px */
+            cursor: pointer;
+            border-radius: 0.3125rem; /* 5px */
+            transition-duration: 0.4s;
+        }
+        .start-class-button:hover {
+            background-color: #45a049; /* Darker shade of green */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <div class="profile-dropdown" onclick="toggleProfile()">
+            <img id="profileImg" src="smit ghatole.jpeg" alt="Teacher Profile Photo">
+            <span id="teacherName">Smit Ghatole</span> ▼
+        </div>
+        <div class="profile-content" id="profileContent">
+            <img id="profileContentImg" src="smit ghatole.jpeg" alt="Teacher Profile Photo">
+            <p><strong>Name:</strong> Smit Ghatole</p>
+            <p><strong>Email:</strong> tharkisaala@gmail.com</p>
+            <p><strong>Number of Courses enrolled in:</strong> 0</p>
+        </div>
+    </div>
+
+    <div class="welcome-message">
+        <p>Welcome to Edupulse! It seems you are not enrolled in any Courses</p>
+        <button class="start-class-button">Join a New Course</button>
+    </div>
+
+    <script>
+        function toggleProfile() {
+            var profileContent = document.getElementById("profileContent");
+            if (profileContent.style.display === "block") {
+                profileContent.style.display = "none";
+            } else {
+                profileContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

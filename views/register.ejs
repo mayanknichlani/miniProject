@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sign-up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(37, 36, 34); /* Dark background */
+            color: rgb(255, 252, 242); /* Light beige text */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+        
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 90%;
+            max-width: 450px;
+            background: rgb(64, 61, 57); /* Dark gray */
+            padding: 50px 60px 70px;
+            text-align: center;
+            border-radius: 10px;
+            color: rgb(255, 252, 242); /* Light beige */
+            position: relative;
+        }
+
+        .form-box h1 {
+            font-size: 30px;
+            margin-bottom: 60px;
+            color:white; /* Orange */
+            position: relative;
+        }
+
+        .form-box h1::after {
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 3px;
+            background: rgb(235, 94, 40); /* Orange */
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .input-field {
+            background: rgb(204, 197, 185); /* Light gray */
+            margin: 15px 0;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            max-height: 65px;
+            transition: max-height 0.5s;
+            overflow: hidden;
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            padding: 18px 15px;
+            color: rgb(37, 36, 34); /* Dark background */
+        }
+
+        .input-field i {
+            margin-left: 15px;
+            color: rgb(255, 252, 242); /* Light beige */
+        }
+
+        form p {
+            text-align: left;
+            font-size: 13px;
+            color: rgb(204, 197, 185); /* Light gray */
+        }
+
+        form p a {
+            text-decoration: none;
+            color: rgb(235, 94, 40); /* Orange */
+        }
+
+        .btn-field {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-field button {
+            flex-basis: 48%;
+            background: rgb(235, 94, 40); /* Orange */
+            color: rgb(255, 252, 242); /* Light beige */
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .input-group {
+            height: 280px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form action = "./register" method="POST">
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name" name = "username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" name = "email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" name = "password">
+                    </div>
+                </div>
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <script>
+        let signupBtn = document.getElementById("signupBtn");
+        let signinBtn = document.getElementById("signinBtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+
+        signupBtn.onclick = function () {
+            nameField.style.maxHeight = '60px';
+            title.innerHTML = "Sign Up";
+            signupBtn.classList.remove("disable");
+            signinBtn.classList.add("disable");
+        }
+    </script> -->
+</body>
+</html>
