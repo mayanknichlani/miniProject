@@ -1,10 +1,14 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const cookieParser = require("cookie-parser");
-const { v4: uuidv4 } = require('uuid');
-const {setUser,getUser} = require("./service/auth");
+
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+import cookieParser from "cookie-parser";
+import { v4 as uuidv4 } from 'uuid';
+import auth from "./service/auth.js";
+
+// Now you can use auth.setUser and auth.getUser
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -59,7 +63,7 @@ async function restrictToLoggedInUserOnly(req,res,next){
         res.redirect("/login");
         return;
     }
-    const user = getUser(userUid);
+    const user = auth.getUser(userUid);
     if(!user){
         res.redirect("/login");
         return;
@@ -71,7 +75,7 @@ async function restrictToLoggedInUserOnly(req,res,next){
 app.post("/login", async (req, res) => {
     try {
         const tempUser = await User.findOne({ username: req.body.username });
-        console.log(tempUser);
+        //console.log(tempUser);
         if (!tempUser) {
             return res.render("./login", {
                 error: "Invalid username or password!"
@@ -87,7 +91,7 @@ app.post("/login", async (req, res) => {
         }
         //Sab kuch correct hai
         const sessionId = uuidv4();
-        setUser(sessionId,tempUser);
+        auth.setUser(sessionId,tempUser);
         res.cookie("uid",sessionId);
         return res.redirect("/");
     } catch (e) {
