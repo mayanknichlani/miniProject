@@ -90,9 +90,8 @@ app.post("/login", async (req, res) => {
             });
         }
         //Sab kuch correct hai
-        const sessionId = uuidv4();
-        auth.setUser(sessionId,tempUser);
-        res.cookie("uid",sessionId);
+        const token = auth.setUser(tempUser);
+        res.cookie("uid",token);
         return res.redirect("/");
     } catch (e) {
         console.log("Error in catch block of login route: ", e);
