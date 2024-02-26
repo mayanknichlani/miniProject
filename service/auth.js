@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
 const secret = "MiniProject@12345";
-const sessionIdToUserMap = new Map();
 function setUser(user){
    return jwt.sign({
     _id:user._id,
